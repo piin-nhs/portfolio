@@ -14,7 +14,7 @@ export const Footer: React.FC = () => {
   return (
     <footer className="bg-background border-t border-[#3e4452]/40 py-10 relative font-mono text-xs">
       <div className="max-w-5xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
-        
+
         {/* Left Side: Copyright */}
         <div className="text-center md:text-left space-y-1">
           <p className="text-textSecondary">
@@ -34,7 +34,7 @@ export const Footer: React.FC = () => {
             className="text-textSecondary hover:text-white transition-colors p-2 border border-transparent hover:border-[#3e4452]"
             aria-label="GitHub Profile"
           >
-            <FaGithub className="h-4.5 w-4.5" />
+            <FaGithub className="h-4 w-4" />
           </a>
           <a
             href={contactInfo.linkedin}
@@ -43,14 +43,14 @@ export const Footer: React.FC = () => {
             className="text-textSecondary hover:text-white transition-colors p-2 border border-transparent hover:border-[#3e4452]"
             aria-label="LinkedIn Profile"
           >
-            <FaLinkedin className="h-4.5 w-4.5" />
+            <FaLinkedin className="h-4 w-4" />
           </a>
           <a
             href={`mailto:${contactInfo.email}`}
             className="text-textSecondary hover:text-white transition-colors p-2 border border-transparent hover:border-[#3e4452]"
             aria-label="Email Me"
           >
-            <Mail className="h-4.5 w-4.5" />
+            <Mail className="h-4 w-4" />
           </a>
         </div>
 

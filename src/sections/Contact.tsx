@@ -10,18 +10,57 @@ export const Contact: React.FC = () => {
     subject: '',
     message: ''
   });
-  const [status, setStatus] = useState<'idle' | 'sending' | 'success'>('idle');
+  const [status, setStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle');
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!formData.name || !formData.email || !formData.message) return;
 
     setStatus('sending');
-    setTimeout(() => {
-      setStatus('success');
-      setFormData({ name: '', email: '', subject: '', message: '' });
+
+    const accessKey = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY;
+    if (!accessKey) {
+      console.warn("Web3Forms access key is missing. Please set VITE_WEB3FORMS_ACCESS_KEY in your .env file.");
+      // Fallback behavior so user can test the visual loading without key
+      setTimeout(() => {
+        setStatus('success');
+        setFormData({ name: '', email: '', subject: '', message: '' });
+        setTimeout(() => setStatus('idle'), 4000);
+      }, 1500);
+      return;
+    }
+
+    try {
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          access_key: accessKey,
+          name: formData.name,
+          email: formData.email,
+          subject: formData.subject || `Portfolio Message from ${formData.name}`,
+          message: formData.message
+        })
+      });
+
+      const result = await response.json();
+      if (result.success) {
+        setStatus('success');
+        setFormData({ name: '', email: '', subject: '', message: '' });
+        setTimeout(() => setStatus('idle'), 4000);
+      } else {
+        console.error("Web3Forms submission failed:", result);
+        setStatus('error');
+        setTimeout(() => setStatus('idle'), 4000);
+      }
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      setStatus('error');
       setTimeout(() => setStatus('idle'), 4000);
-    }, 1500);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -164,10 +203,12 @@ export const Contact: React.FC = () => {
               {/* Submit Button */}
               <button
                 type="submit"
-                disabled={status !== 'idle'}
+                disabled={status === 'sending'}
                 className={`w-full py-2.5 border font-semibold text-xs flex items-center justify-center space-x-2 transition-all ${
                   status === 'success'
                     ? 'border-green-500 text-green-400 bg-green-500/5'
+                    : status === 'error'
+                    ? 'border-red-500 text-red-400 bg-red-500/5'
                     : 'border-accent text-accent hover:bg-accent/10'
                 } disabled:opacity-80`}
               >
@@ -190,6 +231,11 @@ export const Contact: React.FC = () => {
                   <>
                     <Check className="h-4 w-4" />
                     <span>Message Sent Successfully!</span>
+                  </>
+                )}
+                {status === 'error' && (
+                  <>
+                    <span>Failed to Send. Try Again!</span>
                   </>
                 )}
               </button>
