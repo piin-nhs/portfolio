@@ -41,7 +41,9 @@ export const Contact: React.FC = () => {
           access_key: accessKey,
           name: formData.name,
           email: formData.email,
-          subject: formData.subject || `Portfolio Message from ${formData.name}`,
+          subject: formData.subject || `Portfolio: Message from ${formData.name}`,
+          from_name: "Hoang Sang Portfolio",
+          replyto: formData.email,
           message: formData.message
         })
       });
