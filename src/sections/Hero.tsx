@@ -191,20 +191,20 @@ export const Hero: React.FC = () => {
                 >
                   <span 
                     className="absolute text-4xl bg-background px-1 text-accent font-bold select-none"
-                    style={{ left: '1.25rem', top: '-0.9rem' }}
+                    style={{ left: '1.25rem', top: '-0.9rem', display: 'inline-block', lineHeight: '0.6' }}
                   >
                     “
                   </span>
                   <span>Code is like humor. When you have to explain it, it's bad.</span>
                   <span 
                     className="absolute text-4xl bg-background px-1 text-accent font-bold select-none"
-                    style={{ right: '1.5rem', bottom: '-1.0rem' }}
+                    style={{ right: '1.5rem', bottom: '-1.0rem', display: 'inline-block', lineHeight: '0.6' }}
                   >
                     ”
                   </span>
                 </p>
               </div>
-              <p className="w-fit border border-[#3e4452] border-t-transparent py-1.5 px-3 text-textSecondary text-xs font-mono mr-10">
+              <p className="w-fit border border-[#3e4452] border-t-transparent py-1.5 px-3 text-textSecondary text-xs font-mono mr-6">
                 - Cory House
               </p>
             </div>
