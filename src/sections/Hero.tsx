@@ -28,7 +28,7 @@ export const Hero: React.FC = () => {
 
   return (
     <section id="home" className="min-h-screen relative flex flex-col justify-center overflow-hidden pt-28 pb-12 bg-background">
-      
+
       {/* Decorative dot grids and rectangles */}
       <div className="absolute top-[15%] left-[5%] text-[#3e4452]/20 hidden md:block pointer-events-none select-none">
         <svg className="w-16 h-16" viewBox="0 0 84 84" fill="currentColor">
@@ -75,28 +75,28 @@ export const Hero: React.FC = () => {
         >
           {/* Grid Layout: Intro Text + Terminal window */}
           <div className="grid grid-cols-1 lg:grid-cols-[3fr_2fr] gap-10 items-center">
-            
+
             {/* Left Column: Intro */}
             <div className="space-y-6">
               <motion.div variants={itemVariants} className="text-accent text-sm font-mono tracking-wider">
                 <span>// final-year software engineering student</span>
               </motion.div>
 
-              <motion.h1 
+              <motion.h1
                 variants={itemVariants}
                 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-white leading-tight"
               >
                 I am a <span className="text-accent">software engineer</span> and <span className="text-accent">full-stack developer</span>
               </motion.h1>
 
-              <motion.p 
+              <motion.p
                 variants={itemVariants}
                 className="text-sm sm:text-base text-textSecondary leading-relaxed"
               >
                 I build robust, event-driven backend services and construct responsive, pixel-perfect user interfaces. Currently seeking an internship role to apply software architectures in production environments.
               </motion.p>
 
-              <motion.div 
+              <motion.div
                 variants={itemVariants}
                 className="flex flex-wrap gap-4 pt-2"
               >
@@ -136,7 +136,7 @@ export const Hero: React.FC = () => {
             </div>
 
             {/* Right Column: Interactive Profile Terminal */}
-            <motion.div 
+            <motion.div
               variants={itemVariants}
               className="border border-[#3e4452] bg-[#21252b] rounded relative overflow-hidden group shadow-xl"
             >
@@ -158,7 +158,7 @@ export const Hero: React.FC = () => {
                   <span className="text-white">cat sang_profile.json</span>
                 </div>
                 <pre className="text-white font-mono text-[11px] sm:text-xs leading-relaxed">
-{`{
+                  {`{
   "name": "Nguyen Hoang Sang",
   "role": "Software Engineer Intern",
   "status": "Senior Student @ IUH",
@@ -178,40 +178,20 @@ export const Hero: React.FC = () => {
             </motion.div>
           </div>
 
-          <motion.div 
+          {/* Programmer Quote Block (Centered below grid) */}
+          <motion.div
             variants={itemVariants}
             className="flex flex-col items-center justify-center pt-8"
           >
-            <div className="w-fit max-w-xl flex flex-col items-end justify-end select-none">
+            <div className="w-full max-w-2xl flex flex-col items-end justify-end select-none">
               <div className="relative w-full">
-                <div 
-                  className="w-fit border-l border-r border-[#3e4452] py-4 text-white relative text-xs sm:text-sm italic leading-relaxed font-mono"
-                  style={{ paddingLeft: '3.5rem', paddingRight: '3.5rem' }}
-                >
-                  {/* Top split border */}
-                  <div className="absolute top-0 left-0 w-5 h-[1px] bg-[#3e4452]" />
-                  <span 
-                    className="absolute text-4xl text-accent font-bold select-none bg-transparent"
-                    style={{ left: '1.25rem', top: '-0.9rem', display: 'inline-block', lineHeight: '0.6' }}
-                  >
-                    “
-                  </span>
-                  <div className="absolute top-0 left-11 right-0 h-[1px] bg-[#3e4452]" />
-
+                <p className="w-full border border-[#3e4452] py-5 px-6 text-white relative text-xs sm:text-sm italic leading-relaxed font-mono">
+                  <span className="absolute text-4xl bg-transparent px-1 -top-[0.65rem] left-6 text-accent font-bold">“</span>
                   <span>Code is like humor. When you have to explain it, it's bad.</span>
-
-                  {/* Bottom split border */}
-                  <div className="absolute bottom-0 left-0 right-12 h-[1px] bg-[#3e4452]" />
-                  <span 
-                    className="absolute text-4xl text-accent font-bold select-none bg-transparent"
-                    style={{ right: '1.5rem', bottom: '-1.0rem', display: 'inline-block', lineHeight: '0.6' }}
-                  >
-                    ”
-                  </span>
-                  <div className="absolute bottom-0 right-0 w-5 h-[1px] bg-[#3e4452]" />
-                </div>
+                  <span className="absolute text-4xl bg-transparent px-1 -bottom-[1.8rem] right-6 text-accent font-bold">”</span>
+                </p>
               </div>
-              <p className="w-fit border border-[#3e4452] border-t-transparent py-1.5 px-3 text-textSecondary text-xs font-mono mr-6">
+              <p className="w-fit border border-[#3e4452] border-t-transparent py-2 px-4 text-textSecondary text-xs font-mono">
                 - Cory House
               </p>
             </div>
