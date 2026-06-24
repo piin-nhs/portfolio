@@ -5,7 +5,7 @@ export const contactInfo: ContactInfo = {
   email: "h.sangg.r@gmail.com",
   phone: "0559496637",
   github: "https://github.com/piin-nhs",
-  linkedin: "https://www.linkedin.com/in/hoang-sang-nguyen-920530411/",
+  linkedin: "https://www.linkedin.com/in/piin-nhs/",
   location: "Ho Chi Minh City, Vietnam",
   cvDownloadUrl: "/NguyenHoangSang_FullstackDeveloperIntern_CV.pdf" // Static public asset
 };
