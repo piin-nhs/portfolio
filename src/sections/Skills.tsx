@@ -49,7 +49,7 @@ export const Skills: React.FC = () => {
             {skillCategories.map((cat, idx) => (
               <div 
                 key={idx}
-                className="border border-[#3e4452] bg-[#21252b] h-fit transition-colors hover:border-[#abb2bf]/60 duration-200"
+                className="border border-[#3e4452] bg-[#21252b] h-full transition-colors hover:border-[#abb2bf]/60 duration-200"
               >
                 {/* Title header with border */}
                 <h3 className="px-3 py-2 border-b border-[#3e4452] font-mono text-xs sm:text-sm font-semibold text-white tracking-wide">

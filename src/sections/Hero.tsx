@@ -185,7 +185,7 @@ export const Hero: React.FC = () => {
           >
             <div className="w-full max-w-2xl flex flex-col items-end justify-end select-none">
               <div className="relative w-full">
-                <p className="w-full border border-[#3e4452] py-4 px-5 text-white relative text-xs sm:text-sm italic leading-relaxed font-mono">
+                <p className="w-full border border-[#3e4452] py-4 pl-10 pr-8 text-white relative text-xs sm:text-sm italic leading-relaxed font-mono">
                   <span className="absolute text-4xl bg-background px-1 -top-4 left-6 text-accent font-bold">“</span>
                   <span>Code is like humor. When you have to explain it, it's bad.</span>
                   <span className="absolute text-4xl bg-background px-1 -bottom-5 right-6 text-accent font-bold">”</span>
