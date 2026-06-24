@@ -183,10 +183,10 @@ export const Hero: React.FC = () => {
             variants={itemVariants}
             className="flex flex-col items-center justify-center pt-8"
           >
-            <div className="w-full max-w-2xl flex flex-col items-end justify-end select-none">
+            <div className="w-fit max-w-xl flex flex-col items-end justify-end select-none">
               <div className="relative w-full">
                 <p 
-                  className="w-full border border-[#3e4452] py-4 text-white relative text-xs sm:text-sm italic leading-relaxed font-mono"
+                  className="w-fit border border-[#3e4452] py-4 text-white relative text-xs sm:text-sm italic leading-relaxed font-mono"
                   style={{ paddingLeft: '3.5rem', paddingRight: '3.5rem' }}
                 >
                   <span 
