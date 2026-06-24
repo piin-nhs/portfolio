@@ -178,31 +178,38 @@ export const Hero: React.FC = () => {
             </motion.div>
           </div>
 
-          {/* Programmer Quote Block (Centered below grid) */}
           <motion.div 
             variants={itemVariants}
             className="flex flex-col items-center justify-center pt-8"
           >
             <div className="w-fit max-w-xl flex flex-col items-end justify-end select-none">
               <div className="relative w-full">
-                <p 
-                  className="w-fit border border-[#3e4452] py-4 text-white relative text-xs sm:text-sm italic leading-relaxed font-mono"
+                <div 
+                  className="w-fit border-l border-r border-[#3e4452] py-4 text-white relative text-xs sm:text-sm italic leading-relaxed font-mono"
                   style={{ paddingLeft: '3.5rem', paddingRight: '3.5rem' }}
                 >
+                  {/* Top split border */}
+                  <div className="absolute top-0 left-0 w-5 h-[1px] bg-[#3e4452]" />
                   <span 
-                    className="absolute text-4xl bg-background px-1 text-accent font-bold select-none"
+                    className="absolute text-4xl text-accent font-bold select-none bg-transparent"
                     style={{ left: '1.25rem', top: '-0.9rem', display: 'inline-block', lineHeight: '0.6' }}
                   >
                     “
                   </span>
+                  <div className="absolute top-0 left-11 right-0 h-[1px] bg-[#3e4452]" />
+
                   <span>Code is like humor. When you have to explain it, it's bad.</span>
+
+                  {/* Bottom split border */}
+                  <div className="absolute bottom-0 left-0 right-12 h-[1px] bg-[#3e4452]" />
                   <span 
-                    className="absolute text-4xl bg-background px-1 text-accent font-bold select-none"
+                    className="absolute text-4xl text-accent font-bold select-none bg-transparent"
                     style={{ right: '1.5rem', bottom: '-1.0rem', display: 'inline-block', lineHeight: '0.6' }}
                   >
                     ”
                   </span>
-                </p>
+                  <div className="absolute bottom-0 right-0 w-5 h-[1px] bg-[#3e4452]" />
+                </div>
               </div>
               <p className="w-fit border border-[#3e4452] border-t-transparent py-1.5 px-3 text-textSecondary text-xs font-mono mr-6">
                 - Cory House
