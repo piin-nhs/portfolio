@@ -2,12 +2,12 @@ import type { SkillCategory, Project, Education, ContactInfo } from '../types';
 
 export const contactInfo: ContactInfo = {
   name: "Nguyen Hoang Sang",
-  email: "peh.sangg.r@gmail.com",
+  email: "h.sangg.r@gmail.com",
   phone: "0559496637",
   github: "https://github.com/piin-nhs",
   linkedin: "https://www.linkedin.com/in/hoang-sang-nguyen-920530411/",
   location: "Ho Chi Minh City, Vietnam",
-  cvDownloadUrl: "#" // Will lead to direct download or action
+  cvDownloadUrl: "/NguyenHoangSang_FullstackDeveloperIntern_CV.pdf" // Static public asset
 };
 
 export const educationInfo: Education = {
@@ -15,17 +15,16 @@ export const educationInfo: Education = {
   degree: "Bachelor of Software Engineering",
   major: "Faculty of Information Technology",
   gpa: "3.12 / 4.0",
-  duration: "October 2022 – Present",
-  expectedGraduation: "October 2026",
+  duration: "2022 – Present",
+  expectedGraduation: "2027",
   coursework: [
     "Object-Oriented Programming",
-    "Data Structures & Algorithms",
-    "Database Management Systems",
-    "Software Project Management",
-    "Web Application Architecture"
+    "Emerging Technologies",
+    "Application UI Development",
+    "Web Application Development"
   ],
   awards: [
-    "Academic Encouragement Scholarship — Industrial University of Ho Chi Minh City (Awarded for outstanding academic performance during the school year 2023–2024)"
+    "Academic Encouragement Scholarship 2023–2024 - Excellent Academic Performance"
   ]
 };
 
@@ -100,7 +99,7 @@ export const projectsInfo: Project[] = [
     duration: "May 2026 – June 2026",
     description: "Co-engineered a production-grade, microservices-based OTT messaging application composed of 7 decoupled infrastructure blocks (API Gateway, Auth, User, Notification, Media, Chat, Analytic). Personally built the full-stack chat service mesh to replace basic monolithic polling with a fluid low-latency WebSocket communication layers.",
     technologies: [
-      "React", "TypeScript", "Vite", "Tailwind CSS", "Socket.IO", "LiveKit SDK", "Node.js", 
+      "React", "TypeScript", "Vite", "Tailwind CSS", "Socket.IO", "LiveKit SDK", "Node.js",
       "Express", "MongoDB", "Redis", "RabbitMQ", "Docker", "AWS (EC2, S3, ECR, SSM)", "GitHub Actions"
     ],
     responsibilities: [
@@ -128,7 +127,7 @@ export const projectsInfo: Project[] = [
     duration: "December 2025 – May 2026",
     description: "Engineered a full-featured e-commerce enterprise infrastructure containing a public customer storefront, an embedded interactive financial reporting office dashboard, and asynchronous payment ledger verifications.",
     technologies: [
-      "React 19", "TypeScript", "Vite", "Tailwind CSS", "Chart.js", "Java 17", "Spring Boot 3", 
+      "React 19", "TypeScript", "Vite", "Tailwind CSS", "Chart.js", "Java 17", "Spring Boot 3",
       "Spring Security", "Spring Data JPA", "MariaDB", "Redis", "Cloudinary", "SePay Gateway"
     ],
     responsibilities: [
@@ -145,6 +144,7 @@ export const projectsInfo: Project[] = [
       "Significantly reduced initial page bundle latency by establishing clean routing code-splitting boundaries and asset lazy-loading paths, preserving client-side load performance.",
       "Achieved a 100% pixel-perfect mobile-responsive deployment, enforcing strict user experience consistency across diverse Android, iOS, and desktop viewports."
     ],
-    github: "https://github.com/piin-nhs"
+    github: "https://github.com/piin-nhs",
+    demo: "https://github.com/piin-nhs"
   }
 ];

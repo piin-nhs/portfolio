@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
 import { Mail, Phone, MapPin, Send, Check } from 'lucide-react';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
 import { contactInfo } from '../data/cvData';
@@ -33,114 +32,82 @@ export const Contact: React.FC = () => {
   };
 
   return (
-    <section id="contact" className="py-24 bg-surface relative">
-      <div className="max-w-6xl mx-auto px-6">
+    <section id="contact" className="py-20 bg-background relative overflow-hidden">
+      
+      <div className="max-w-5xl mx-auto px-6 relative z-10">
         
         {/* Section Heading */}
-        <div className="flex flex-col items-center text-center mb-16">
-          <div className="flex items-center space-x-2 text-accent text-sm font-mono tracking-wider uppercase mb-2">
-            <Mail className="h-4 w-4" />
-            <span>05 . Connect</span>
-          </div>
-          <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-textPrimary">Get In Touch</h2>
-          <div className="h-1 w-12 bg-primary rounded-full mt-4" />
-          <p className="text-textSecondary text-sm max-w-xl mt-4">
-            Feel free to reach out for internship opportunities, project collaborations, or general technical inquiries.
-          </p>
+        <div className="flex items-center gap-4 mb-16 w-full font-mono">
+          <h2 className="text-2xl sm:text-3xl font-semibold text-white flex items-center">
+            <span className="text-accent mr-1">#</span>contact
+          </h2>
+          <span className="grow h-[1px] bg-accent max-w-[200px] sm:max-w-[400px]"></span>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-stretch">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch font-mono">
           
-          {/* Left Column: Direct Contacts */}
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.6 }}
-            className="lg:col-span-5 flex flex-col justify-between p-8 rounded-3xl bg-card border border-white/5 space-y-8"
-          >
-            <div className="space-y-6">
-              <h3 className="text-xl font-bold text-textPrimary">Contact Details</h3>
-              <p className="text-sm text-textSecondary leading-relaxed">
-                I am actively seeking software engineering internships where I can contribute to system design, API pipelines, or dynamic frontend interfaces.
+          {/* Left Column: Direct Contacts Box */}
+          <div className="lg:col-span-5 border border-[#3e4452] bg-[#21252b] p-5 flex flex-col justify-between gap-8">
+            <div className="space-y-4">
+              <h3 className="text-base font-bold text-white">// support_and_contact</h3>
+              <p className="text-xs sm:text-sm text-textSecondary leading-relaxed">
+                I am actively seeking software engineering intern positions. If you have any inquiries, suggestions, or potential collaborations, feel free to drop a line!
               </p>
             </div>
 
             {/* Direct Details */}
-            <div className="space-y-4 font-mono text-sm text-textSecondary">
-              <a
-                href={`mailto:${contactInfo.email}`}
-                className="flex items-center space-x-4 p-4 rounded-xl bg-surface border border-white/5 hover:border-accent/30 transition-all text-left"
-              >
-                <div className="p-2.5 rounded-lg bg-card text-accent">
-                  <Mail className="h-5 w-5" />
-                </div>
-                <div>
-                  <span className="text-[10px] text-white/30 block">Email</span>
-                  <span className="text-xs text-textPrimary break-all">{contactInfo.email}</span>
-                </div>
-              </a>
+            <div className="space-y-3 text-xs text-textSecondary select-none">
+              <div className="flex items-center space-x-3 p-3 border border-[#3e4452] hover:border-[#abb2bf]/40 transition-colors">
+                <Mail className="h-4 w-4 text-accent flex-shrink-0" />
+                <a href={`mailto:${contactInfo.email}`} className="text-white hover:underline truncate">
+                  {contactInfo.email}
+                </a>
+              </div>
 
-              <a
-                href={`tel:${contactInfo.phone}`}
-                className="flex items-center space-x-4 p-4 rounded-xl bg-surface border border-white/5 hover:border-accent/30 transition-all text-left"
-              >
-                <div className="p-2.5 rounded-lg bg-card text-accent">
-                  <Phone className="h-5 w-5" />
-                </div>
-                <div>
-                  <span className="text-[10px] text-white/30 block">Phone</span>
-                  <span className="text-xs text-textPrimary">{contactInfo.phone}</span>
-                </div>
-              </a>
+              <div className="flex items-center space-x-3 p-3 border border-[#3e4452] hover:border-[#abb2bf]/40 transition-colors">
+                <Phone className="h-4 w-4 text-accent flex-shrink-0" />
+                <a href={`tel:${contactInfo.phone}`} className="text-white hover:underline">
+                  {contactInfo.phone}
+                </a>
+              </div>
 
-              <div className="flex items-center space-x-4 p-4 rounded-xl bg-surface border border-white/5 text-left cursor-default">
-                <div className="p-2.5 rounded-lg bg-card text-accent">
-                  <MapPin className="h-5 w-5" />
-                </div>
-                <div>
-                  <span className="text-[10px] text-white/30 block">Location</span>
-                  <span className="text-xs text-textPrimary">{contactInfo.location}</span>
-                </div>
+              <div className="flex items-center space-x-3 p-3 border border-[#3e4452]">
+                <MapPin className="h-4 w-4 text-accent flex-shrink-0" />
+                <span className="text-white truncate">{contactInfo.location}</span>
               </div>
             </div>
 
-            {/* Social handles */}
-            <div className="flex items-center space-x-4 pt-6 border-t border-white/5">
+            {/* Social handles list */}
+            <div className="flex items-center space-x-4 pt-4 border-t border-[#3e4452]/40 text-xs">
               <a
                 href={contactInfo.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center space-x-2 text-xs text-textSecondary hover:text-accent transition-colors"
+                className="flex items-center space-x-1.5 hover:text-white transition-colors"
               >
                 <FaGithub className="h-4 w-4" />
-                <span>GitHub</span>
+                <span>github</span>
               </a>
               <a
                 href={contactInfo.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center space-x-2 text-xs text-textSecondary hover:text-accent transition-colors"
+                className="flex items-center space-x-1.5 hover:text-white transition-colors"
               >
                 <FaLinkedin className="h-4 w-4" />
-                <span>LinkedIn</span>
+                <span>linkedin</span>
               </a>
             </div>
+          </div>
 
-          </motion.div>
-
-          {/* Right Column: Simulated Form */}
-          <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.6, delay: 0.15 }}
-            className="lg:col-span-7 p-8 rounded-3xl bg-card border border-white/5"
-          >
-            <form onSubmit={handleSubmit} className="space-y-5">
+          {/* Right Column: Contact form box */}
+          <div className="lg:col-span-7 border border-[#3e4452] bg-[#21252b] p-5">
+            <h3 className="text-base font-bold text-white mb-6">// send_message</h3>
+            
+            <form onSubmit={handleSubmit} className="space-y-4">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div className="space-y-2">
-                  <label htmlFor="name" className="text-xs font-mono text-textSecondary">Your Name *</label>
+                <div className="space-y-1.5">
+                  <label htmlFor="name" className="text-xs text-textSecondary">name *</label>
                   <input
                     id="name"
                     type="text"
@@ -149,11 +116,11 @@ export const Contact: React.FC = () => {
                     value={formData.name}
                     onChange={handleChange}
                     placeholder="Enter your name"
-                    className="w-full px-4 py-3 rounded-xl bg-surface border border-white/5 text-textPrimary placeholder-white/20 text-sm focus:border-accent/40 focus:outline-none transition-colors"
+                    className="w-full px-3 py-2 bg-transparent border border-[#3e4452] text-white text-xs placeholder-white/20 focus:border-accent focus:outline-none transition-colors"
                   />
                 </div>
-                <div className="space-y-2">
-                  <label htmlFor="email" className="text-xs font-mono text-textSecondary">Your Email *</label>
+                <div className="space-y-1.5">
+                  <label htmlFor="email" className="text-xs text-textSecondary">email *</label>
                   <input
                     id="email"
                     type="email"
@@ -162,13 +129,13 @@ export const Contact: React.FC = () => {
                     value={formData.email}
                     onChange={handleChange}
                     placeholder="name@example.com"
-                    className="w-full px-4 py-3 rounded-xl bg-surface border border-white/5 text-textPrimary placeholder-white/20 text-sm focus:border-accent/40 focus:outline-none transition-colors"
+                    className="w-full px-3 py-2 bg-transparent border border-[#3e4452] text-white text-xs placeholder-white/20 focus:border-accent focus:outline-none transition-colors"
                   />
                 </div>
               </div>
 
-              <div className="space-y-2">
-                <label htmlFor="subject" className="text-xs font-mono text-textSecondary">Subject</label>
+              <div className="space-y-1.5">
+                <label htmlFor="subject" className="text-xs text-textSecondary">subject</label>
                 <input
                   id="subject"
                   type="text"
@@ -176,12 +143,12 @@ export const Contact: React.FC = () => {
                   value={formData.subject}
                   onChange={handleChange}
                   placeholder="Internship Inquiry / Partnership"
-                  className="w-full px-4 py-3 rounded-xl bg-surface border border-white/5 text-textPrimary placeholder-white/20 text-sm focus:border-accent/40 focus:outline-none transition-colors"
+                  className="w-full px-3 py-2 bg-transparent border border-[#3e4452] text-white text-xs placeholder-white/20 focus:border-accent focus:outline-none transition-colors"
                 />
               </div>
 
-              <div className="space-y-2">
-                <label htmlFor="message" className="text-xs font-mono text-textSecondary">Your Message *</label>
+              <div className="space-y-1.5">
+                <label htmlFor="message" className="text-xs text-textSecondary">message *</label>
                 <textarea
                   id="message"
                   name="message"
@@ -190,7 +157,7 @@ export const Contact: React.FC = () => {
                   value={formData.message}
                   onChange={handleChange}
                   placeholder="Tell me about your role or project..."
-                  className="w-full px-4 py-3 rounded-xl bg-surface border border-white/5 text-textPrimary placeholder-white/20 text-sm focus:border-accent/40 focus:outline-none transition-colors resize-none"
+                  className="w-full px-3 py-2 bg-transparent border border-[#3e4452] text-white text-xs placeholder-white/20 focus:border-accent focus:outline-none transition-colors resize-none"
                 />
               </div>
 
@@ -198,21 +165,21 @@ export const Contact: React.FC = () => {
               <button
                 type="submit"
                 disabled={status !== 'idle'}
-                className={`w-full py-4 rounded-xl font-medium text-sm flex items-center justify-center space-x-2 transition-all ${
+                className={`w-full py-2.5 border font-semibold text-xs flex items-center justify-center space-x-2 transition-all ${
                   status === 'success'
-                    ? 'bg-green-600 text-textPrimary'
-                    : 'bg-primary hover:bg-blue-700 text-textPrimary hover:shadow-lg hover:shadow-blue-500/10'
+                    ? 'border-green-500 text-green-400 bg-green-500/5'
+                    : 'border-accent text-accent hover:bg-accent/10'
                 } disabled:opacity-80`}
               >
                 {status === 'idle' && (
                   <>
                     <span>Send Message</span>
-                    <Send className="h-4 w-4" />
+                    <Send className="h-3.5 w-3.5" />
                   </>
                 )}
                 {status === 'sending' && (
                   <>
-                    <svg className="animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                    <svg className="animate-spin h-3.5 w-3.5 text-accent" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
                       <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
                       <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                     </svg>
@@ -221,13 +188,13 @@ export const Contact: React.FC = () => {
                 )}
                 {status === 'success' && (
                   <>
-                    <Check className="h-5 w-5" />
+                    <Check className="h-4 w-4" />
                     <span>Message Sent Successfully!</span>
                   </>
                 )}
               </button>
             </form>
-          </motion.div>
+          </div>
 
         </div>
 
@@ -235,4 +202,5 @@ export const Contact: React.FC = () => {
     </section>
   );
 };
+
 export default Contact;

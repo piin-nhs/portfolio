@@ -9,16 +9,21 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: "#2563EB",
-        background: "#0F172A",
-        surface: "#111827",
-        card: "#1E293B",
-        textPrimary: "#F8FAFC",
-        textSecondary: "#94A3B8",
-        accent: "#38BDF8",
+        primary: "#abb2bf",      // Default text color (gray)
+        secondary: "#282c33",    // BG body secondary
+        background: "#282c33",   // Default background (One Dark slate)
+        surface: "#21252b",      // Darker background block
+        card: "#21252b",         // Darker card background
+        textPrimary: "#abb2bf",  // Base gray text
+        textSecondary: "#abb2bf", // Sub-text
+        accent: "#c778dd",       // Purple highlight
+        purple: "#c778dd",       // Explicit purple
+        tertiary: "#ffffff",     // White text highlights
+        borderDefault: "#abb2bf" // Standard gray border
       },
       fontFamily: {
-        sans: ["Inter", "Plus Jakarta Sans", "sans-serif"],
+        sans: ["Fira Code", "Courier New", "monospace"],
+        mono: ["Fira Code", "Courier New", "monospace"],
       },
       animation: {
         'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
